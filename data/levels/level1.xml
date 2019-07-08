@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<level name="level1">
+	<Entities>
+		<Entity name="test3" id="4294967295" type="2712113402" pos="273,216,0">
+			<CPhysicsComponent m2="0" />
+			<CGraphicComponent MainTexture="" TexturePivot="0,0" pos="0,0,0" />
+			<CSoundComponent m3="0.000000" />
+		</Entity>
+		<Entity name="TCommonEntity_0" id="1149196316" type="2712113402" pos="176,136,0">
+			<CPhysicsComponent m2="0" />
+			<CGraphicComponent MainTexture="" TexturePivot="0,0" pos="0,0,0" />
+			<CSoundComponent m3="0.000000" />
+		</Entity>
+	</Entities>
+	<Resources>
+		<Textures />
+		<Sounds />
+	</Resources>
+</level>

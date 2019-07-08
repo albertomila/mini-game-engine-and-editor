@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Library name="test_register_library">
+	<LibraryObject name="test1" key="2326977762" enumMember="2" pos="-4.31602e+08,-4.31602e+08,-4.31602e+08" pos2="-4.31602e+08,-4.31602e+08" />
+	<LibraryObject name="test2" key="331058520" enumMember="3" pos="-4.31602e+08,-4.31602e+08,-4.31602e+08" pos2="-4.31602e+08,-4.31602e+08" />
+	<LibraryObject name="test3" key="1690090958" enumMember="3" pos="-4.31602e+08,-4.31602e+08,-4.31602e+08" pos2="-4.31602e+08,-4.31602e+08" />
+</Library>

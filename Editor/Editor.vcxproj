@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{017C82F9-FA03-42F7-B20C-525599176D1E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Editor</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WINDOWS,__WINDOWS__,__WXMSW__,__WXDEBUG__,WXDEBUG=1,;__WIN95__,__WIN32__,WINVER=0x0400,STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>Editor_PCH.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\;.\libs\wxWidgets\include;.\libs\wxWidgets\lib\vc_lib\mswd;.\libs\wxWidgets\include\msvc;..\libs\;..\MainGame\build_maingame_vc10</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\libs\wxWidgets\lib\vc_lib;.\libs\wxWidgets\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(OutDir)MDGame.lib;$(OutDir)Game.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\libs\boost_1_55_0;..\;C:\Users\MILA\Docs\works\MonsterDrift\libs\wxWidgets-3.0.0\include;C:\Users\MILA\Docs\works\MonsterDrift\libs\wxWidgets-3.0.0\lib\vc_lib\mswd;C:\Users\MILA\Docs\works\MonsterDrift\libs\wxWidgets-3.0.0\include\msvc;F:\MonsterDrift\libs\wxWidgets-3.0.0\include;F:\MonsterDrift\libs\wxWidgets-3.0.0\lib\vc_lib\mswd;F:\MonsterDrift\libs\wxWidgets-3.0.0\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Editor_PCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>F:\MonsterDrift\libs\wxWidgets-3.0.0\lib\vc_lib;C:\Users\MILA\Docs\works\MonsterDrift\libs\wxWidgets-3.0.0\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(OutDir)MDGame.lib;$(OutDir)Game.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Canvas\Drawable.h" />
+    <ClInclude Include="Canvas\Image.h" />
+    <ClInclude Include="Canvas\ImageLoader.h" />
+    <ClInclude Include="Canvas\MainGLCanvas.h" />
+    <ClInclude Include="DB\DB.h" />
+    <ClInclude Include="DB\DBObjectPropertyGrid.h" />
+    <ClInclude Include="DB\PropertyModifierBool.h" />
+    <ClInclude Include="DB\PropertyModifierComponent.h" />
+    <ClInclude Include="DB\PropertyModifierDBObject.h" />
+    <ClInclude Include="DB\PropertyModifierDBPointer.h" />
+    <ClInclude Include="DB\PropertyModifierEnum.h" />
+    <ClInclude Include="DB\PropertyModifierFile.h" />
+    <ClInclude Include="DB\PropertyModifierFloatGeneric.h" />
+    <ClInclude Include="DB\PropertyModifierGroup.h" />
+    <ClInclude Include="DB\PropertyModifierHelpers.h" />
+    <ClInclude Include="DB\PropertyModifierIntGeneric.h" />
+    <ClInclude Include="DB\PropertyModifierString.h" />
+    <ClInclude Include="DB\PropertyModifierVector.h" />
+    <ClInclude Include="DB\PropertyModifierVector2.h" />
+    <ClInclude Include="DB\PropertyModifierVector3.h" />
+    <ClInclude Include="DB\PropertyModifierVectorElement.h" />
+    <ClInclude Include="DB\TabEntityArchetypes.h" />
+    <ClInclude Include="DB\TabEntityProperties.h" />
+    <ClInclude Include="DB\TabEntityPrototypes.h" />
+    <ClInclude Include="DB\TabObjectLibraries.h" />
+    <ClInclude Include="DB\TabSingleObjects.h" />
+    <ClInclude Include="Editor_PCH.h" />
+    <ClInclude Include="libs\pugixml\foreach.hpp" />
+    <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="libs\pugixml\pugixml.hpp" />
+    <ClInclude Include="Main\FrameEntityTypePicker.h" />
+    <ClInclude Include="Main\GUITypes.h" />
+    <ClInclude Include="Main\LibraryFrame.h" />
+    <ClInclude Include="Main\MainFrame.h" />
+    <ClInclude Include="Main\ToolBar.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene\Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Canvas\Drawable.cpp" />
+    <ClCompile Include="Canvas\Image.cpp" />
+    <ClCompile Include="Canvas\ImageLoader.cpp" />
+    <ClCompile Include="Canvas\MainGLCanvas.cpp" />
+    <ClCompile Include="DB\DB.cpp" />
+    <ClCompile Include="DB\DBObjectPropertyGrid.cpp" />
+    <ClCompile Include="DB\PropertyModifierBool.cpp" />
+    <ClCompile Include="DB\PropertyModifierComponent.cpp" />
+    <ClCompile Include="DB\PropertyModifierDBObject.cpp" />
+    <ClCompile Include="DB\PropertyModifierDBPointer.cpp" />
+    <ClCompile Include="DB\PropertyModifierEnum.cpp" />
+    <ClCompile Include="DB\PropertyModifierFile .cpp" />
+    <ClCompile Include="DB\PropertyModifierFloatGeneric.cpp" />
+    <ClCompile Include="DB\PropertyModifierGroup.cpp" />
+    <ClCompile Include="DB\PropertyModifierHelpers.cpp" />
+    <ClCompile Include="DB\PropertyModifierIntGeneric.cpp" />
+    <ClCompile Include="DB\PropertyModifierString.cpp" />
+    <ClCompile Include="DB\PropertyModifierVector.cpp" />
+    <ClCompile Include="DB\PropertyModifierVector2.cpp" />
+    <ClCompile Include="DB\PropertyModifierVector3.cpp" />
+    <ClCompile Include="DB\PropertyModifierVectorElement .cpp" />
+    <ClCompile Include="DB\TabEntityArchetypes.cpp" />
+    <ClCompile Include="DB\TabEntityProperties.cpp" />
+    <ClCompile Include="DB\TabEntityPrototypes.cpp" />
+    <ClCompile Include="DB\TabObjectLibraries.cpp" />
+    <ClCompile Include="DB\TabSingleObjects.cpp" />
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="Editor_PCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="libs\pugixml\pugixml.cpp" />
+    <ClCompile Include="Main\FrameEntityTypePicker.cpp" />
+    <ClCompile Include="Main\LibraryFrame.cpp" />
+    <ClCompile Include="Main\MainFrame.cpp" />
+    <ClCompile Include="Main\ToolBar.cpp" />
+    <ClCompile Include="Scene\Scene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Game\Game.vcxproj">
+      <Project>{98102aae-97be-49a0-8dd2-87b16eb3181e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MDGame\MDGame.vcxproj">
+      <Project>{3fa400e2-d7d6-46e1-acac-2e9b7759ded3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Editor.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="x86 Debug|Win32">
+      <Configuration>x86 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{98102AAE-97BE-49A0-8DD2-87B16EB3181E}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>Game</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;GAME_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Game_PCH.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\libs\boost_1_55_0;..\libs\;..\;.\libs\;./</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;GAME_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\libs\boost_1_55_0;..\</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Game_PCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\libs\boost_1_55_0;..\libs\;..\;..\Game</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;GAME_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>Game_PCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Algorithm.h" />
+    <ClInclude Include="Core\BasicTypes.h" />
+    <ClInclude Include="Core\Callback.h" />
+    <ClInclude Include="Core\DynamicObject.h" />
+    <ClInclude Include="Core\LifeTimer.h" />
+    <ClInclude Include="Core\Math.h" />
+    <ClInclude Include="Core\Path.h" />
+    <ClInclude Include="Core\ServiceManager.h" />
+    <ClInclude Include="Core\GameTimer.h" />
+    <ClInclude Include="entity\Entity.h" />
+    <ClInclude Include="entity\EntityComponent.h" />
+    <ClInclude Include="Core\StringToType.h" />
+    <ClInclude Include="Core\Traits.h" />
+    <ClInclude Include="Core\TypeToString.h" />
+    <ClInclude Include="DB\DBManager.h" />
+    <ClInclude Include="DB\DBObject.h" />
+    <ClInclude Include="DB\DBObjectDescriptor.h" />
+    <ClInclude Include="entity\EntityLibrary.h" />
+    <ClInclude Include="entity\EntityRegistry.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameDefs.h" />
+    <ClInclude Include="Gameplay\Level.h" />
+    <ClInclude Include="Gameplay\LevelDBObject.h" />
+    <ClInclude Include="Gameplay\ResourceContainer.h" />
+    <ClInclude Include="Game_PCH.h" />
+    <ClInclude Include="libs\cml\cml.h" />
+    <ClInclude Include="libs\cml\common\array_size_of.h" />
+    <ClInclude Include="libs\cml\common\basis_tags.h" />
+    <ClInclude Include="libs\cml\common\compiler.h" />
+    <ClInclude Include="libs\cml\common\exception.h" />
+    <ClInclude Include="libs\cml\common\layout_tags.h" />
+    <ClInclude Include="libs\cml\common\memory_tags.h" />
+    <ClInclude Include="libs\cml\common\mpl\are_convertible.h" />
+    <ClInclude Include="libs\cml\common\mpl\are_same.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_arithmetic.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_array.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_convertible.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_pointer.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_reshapeable.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_same.h" />
+    <ClInclude Include="libs\cml\common\mpl\enable_if_t.h" />
+    <ClInclude Include="libs\cml\common\mpl\if_t.h" />
+    <ClInclude Include="libs\cml\common\mpl\int_c.h" />
+    <ClInclude Include="libs\cml\common\mpl\is_reshapeable.h" />
+    <ClInclude Include="libs\cml\common\mpl\is_same_pair.h" />
+    <ClInclude Include="libs\cml\common\mpl\is_statically_polymorphic.h" />
+    <ClInclude Include="libs\cml\common\mpl\item_at.h" />
+    <ClInclude Include="libs\cml\common\mpl\plus_c.h" />
+    <ClInclude Include="libs\cml\common\mpl\rebind.h" />
+    <ClInclude Include="libs\cml\common\mpl\type_table.h" />
+    <ClInclude Include="libs\cml\common\promotion.h" />
+    <ClInclude Include="libs\cml\common\size_tags.h" />
+    <ClInclude Include="libs\cml\common\storage_tags.h" />
+    <ClInclude Include="libs\cml\common\temporary.h" />
+    <ClInclude Include="libs\cml\common\traits.h" />
+    <ClInclude Include="libs\cml\common\type_util.h" />
+    <ClInclude Include="libs\cml\mathlib\axis_order.h" />
+    <ClInclude Include="libs\cml\mathlib\constants.h" />
+    <ClInclude Include="libs\cml\mathlib\coordinate_conversion.h" />
+    <ClInclude Include="libs\cml\mathlib\euler_order.h" />
+    <ClInclude Include="libs\cml\mathlib\frustum.h" />
+    <ClInclude Include="libs\cml\mathlib\mathlib.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\basis.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\concat.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\generators.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\invert.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\misc.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\projection.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\rotation.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\scale.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\size_checking.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\temporary.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\transform.h" />
+    <ClInclude Include="libs\cml\mathlib\matrix\translation.h" />
+    <ClInclude Include="libs\cml\mathlib\quaternion\basis.h" />
+    <ClInclude Include="libs\cml\mathlib\quaternion\rotation.h" />
+    <ClInclude Include="libs\cml\mathlib\random_unit.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\angle.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\generators.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\misc.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\orthonormal.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\products.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\rotation.h" />
+    <ClInclude Include="libs\cml\mathlib\vector\transform.h" />
+    <ClInclude Include="libs\cml\matrix.h" />
+    <ClInclude Include="libs\cml\matrix\array_size_of.h" />
+    <ClInclude Include="libs\cml\matrix\basis.h" />
+    <ClInclude Include="libs\cml\matrix\basis_node.h" />
+    <ClInclude Include="libs\cml\matrix\basis_ops.h" />
+    <ClInclude Include="libs\cml\matrix\binary_node.h" />
+    <ClInclude Include="libs\cml\matrix\binary_ops.h" />
+    <ClInclude Include="libs\cml\matrix\col_node.h" />
+    <ClInclude Include="libs\cml\matrix\col_ops.h" />
+    <ClInclude Include="libs\cml\matrix\detail\apply.h" />
+    <ClInclude Include="libs\cml\matrix\detail\check_or_resize.h" />
+    <ClInclude Include="libs\cml\matrix\detail\copy.h" />
+    <ClInclude Include="libs\cml\matrix\detail\determinant.h" />
+    <ClInclude Include="libs\cml\matrix\detail\generate.h" />
+    <ClInclude Include="libs\cml\matrix\detail\get.h" />
+    <ClInclude Include="libs\cml\matrix\detail\inverse.h" />
+    <ClInclude Include="libs\cml\matrix\detail\lu.h" />
+    <ClInclude Include="libs\cml\matrix\detail\resize.h" />
+    <ClInclude Include="libs\cml\matrix\detail\transpose.h" />
+    <ClInclude Include="libs\cml\matrix\determinant.h" />
+    <ClInclude Include="libs\cml\matrix\dynamic.h" />
+    <ClInclude Include="libs\cml\matrix\dynamic_allocated.h" />
+    <ClInclude Include="libs\cml\matrix\dynamic_external.h" />
+    <ClInclude Include="libs\cml\matrix\external.h" />
+    <ClInclude Include="libs\cml\matrix\fixed.h" />
+    <ClInclude Include="libs\cml\matrix\fixed_compiled.h" />
+    <ClInclude Include="libs\cml\matrix\fixed_external.h" />
+    <ClInclude Include="libs\cml\matrix\functions.h" />
+    <ClInclude Include="libs\cml\matrix\fwd.h" />
+    <ClInclude Include="libs\cml\matrix\hadamard_product.h" />
+    <ClInclude Include="libs\cml\matrix\inverse.h" />
+    <ClInclude Include="libs\cml\matrix\lu.h" />
+    <ClInclude Include="libs\cml\matrix\matrix.h" />
+    <ClInclude Include="libs\cml\matrix\matrix_product.h" />
+    <ClInclude Include="libs\cml\matrix\ops.h" />
+    <ClInclude Include="libs\cml\matrix\promotion.h" />
+    <ClInclude Include="libs\cml\matrix\readable_matrix.h" />
+    <ClInclude Include="libs\cml\matrix\row_col.h" />
+    <ClInclude Include="libs\cml\matrix\row_node.h" />
+    <ClInclude Include="libs\cml\matrix\row_ops.h" />
+    <ClInclude Include="libs\cml\matrix\scalar_node.h" />
+    <ClInclude Include="libs\cml\matrix\scalar_ops.h" />
+    <ClInclude Include="libs\cml\matrix\size_checking.h" />
+    <ClInclude Include="libs\cml\matrix\temporary.h" />
+    <ClInclude Include="libs\cml\matrix\trace.h" />
+    <ClInclude Include="libs\cml\matrix\traits.h" />
+    <ClInclude Include="libs\cml\matrix\transpose.h" />
+    <ClInclude Include="libs\cml\matrix\transpose_node.h" />
+    <ClInclude Include="libs\cml\matrix\transpose_ops.h" />
+    <ClInclude Include="libs\cml\matrix\types.h" />
+    <ClInclude Include="libs\cml\matrix\type_util.h" />
+    <ClInclude Include="libs\cml\matrix\unary_node.h" />
+    <ClInclude Include="libs\cml\matrix\unary_ops.h" />
+    <ClInclude Include="libs\cml\matrix\vector_product.h" />
+    <ClInclude Include="libs\cml\matrix\writable_matrix.h" />
+    <ClInclude Include="libs\cml\quaternion.h" />
+    <ClInclude Include="libs\cml\quaternion\binary_node.h" />
+    <ClInclude Include="libs\cml\quaternion\binary_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\comparison.h" />
+    <ClInclude Include="libs\cml\quaternion\conjugate.h" />
+    <ClInclude Include="libs\cml\quaternion\conjugate_node.h" />
+    <ClInclude Include="libs\cml\quaternion\conjugate_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\cross_tags.h" />
+    <ClInclude Include="libs\cml\quaternion\dot.h" />
+    <ClInclude Include="libs\cml\quaternion\fixed.h" />
+    <ClInclude Include="libs\cml\quaternion\fixed_compiled.h" />
+    <ClInclude Include="libs\cml\quaternion\functions.h" />
+    <ClInclude Include="libs\cml\quaternion\fwd.h" />
+    <ClInclude Include="libs\cml\quaternion\imaginary.h" />
+    <ClInclude Include="libs\cml\quaternion\imaginary_node.h" />
+    <ClInclude Include="libs\cml\quaternion\imaginary_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\inverse.h" />
+    <ClInclude Include="libs\cml\quaternion\inverse_node.h" />
+    <ClInclude Include="libs\cml\quaternion\inverse_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\ops.h" />
+    <ClInclude Include="libs\cml\quaternion\order_tags.h" />
+    <ClInclude Include="libs\cml\quaternion\product.h" />
+    <ClInclude Include="libs\cml\quaternion\promotion.h" />
+    <ClInclude Include="libs\cml\quaternion\quaternion.h" />
+    <ClInclude Include="libs\cml\quaternion\readable_quaternion.h" />
+    <ClInclude Include="libs\cml\quaternion\scalar_node.h" />
+    <ClInclude Include="libs\cml\quaternion\scalar_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\size_checking.h" />
+    <ClInclude Include="libs\cml\quaternion\temporary.h" />
+    <ClInclude Include="libs\cml\quaternion\traits.h" />
+    <ClInclude Include="libs\cml\quaternion\types.h" />
+    <ClInclude Include="libs\cml\quaternion\type_util.h" />
+    <ClInclude Include="libs\cml\quaternion\unary_node.h" />
+    <ClInclude Include="libs\cml\quaternion\unary_ops.h" />
+    <ClInclude Include="libs\cml\quaternion\writable_quaternion.h" />
+    <ClInclude Include="libs\cml\scalar\binary_ops.h" />
+    <ClInclude Include="libs\cml\scalar\constants.h" />
+    <ClInclude Include="libs\cml\scalar\functions.h" />
+    <ClInclude Include="libs\cml\scalar\promotion.h" />
+    <ClInclude Include="libs\cml\scalar\traits.h" />
+    <ClInclude Include="libs\cml\scalar\unary_ops.h" />
+    <ClInclude Include="libs\cml\storage\allocated_selector.h" />
+    <ClInclude Include="libs\cml\storage\any_selector.h" />
+    <ClInclude Include="libs\cml\storage\compiled_selector.h" />
+    <ClInclude Include="libs\cml\storage\external_selector.h" />
+    <ClInclude Include="libs\cml\storage\promotion.h" />
+    <ClInclude Include="libs\cml\storage\resize.h" />
+    <ClInclude Include="libs\cml\storage\selectors.h" />
+    <ClInclude Include="libs\cml\storage\type_util.h" />
+    <ClInclude Include="libs\cml\types.h" />
+    <ClInclude Include="libs\cml\util.h" />
+    <ClInclude Include="libs\cml\util\matrix_print.h" />
+    <ClInclude Include="libs\cml\util\quaternion_print.h" />
+    <ClInclude Include="libs\cml\util\vector_hash.h" />
+    <ClInclude Include="libs\cml\util\vector_print.h" />
+    <ClInclude Include="libs\cml\vector.h" />
+    <ClInclude Include="libs\cml\vector\binary_node.h" />
+    <ClInclude Include="libs\cml\vector\binary_ops.h" />
+    <ClInclude Include="libs\cml\vector\comparison.h" />
+    <ClInclude Include="libs\cml\vector\cross.h" />
+    <ClInclude Include="libs\cml\vector\cross_node.h" />
+    <ClInclude Include="libs\cml\vector\cross_ops.h" />
+    <ClInclude Include="libs\cml\vector\detail\check_or_resize.h" />
+    <ClInclude Include="libs\cml\vector\detail\combined_size_of.h" />
+    <ClInclude Include="libs\cml\vector\detail\resize.h" />
+    <ClInclude Include="libs\cml\vector\dot.h" />
+    <ClInclude Include="libs\cml\vector\dynamic.h" />
+    <ClInclude Include="libs\cml\vector\dynamic_allocated.h" />
+    <ClInclude Include="libs\cml\vector\dynamic_const_external.h" />
+    <ClInclude Include="libs\cml\vector\dynamic_external.h" />
+    <ClInclude Include="libs\cml\vector\external.h" />
+    <ClInclude Include="libs\cml\vector\fixed.h" />
+    <ClInclude Include="libs\cml\vector\fixed_compiled.h" />
+    <ClInclude Include="libs\cml\vector\fixed_const_external.h" />
+    <ClInclude Include="libs\cml\vector\fixed_external.h" />
+    <ClInclude Include="libs\cml\vector\functions.h" />
+    <ClInclude Include="libs\cml\vector\fwd.h" />
+    <ClInclude Include="libs\cml\vector\hadamard_product.h" />
+    <ClInclude Include="libs\cml\vector\ops.h" />
+    <ClInclude Include="libs\cml\vector\outer_product.h" />
+    <ClInclude Include="libs\cml\vector\outer_product_node.h" />
+    <ClInclude Include="libs\cml\vector\outer_product_ops.h" />
+    <ClInclude Include="libs\cml\vector\perp_dot.h" />
+    <ClInclude Include="libs\cml\vector\products.h" />
+    <ClInclude Include="libs\cml\vector\promotion.h" />
+    <ClInclude Include="libs\cml\vector\readable_vector.h" />
+    <ClInclude Include="libs\cml\vector\scalar_node.h" />
+    <ClInclude Include="libs\cml\vector\scalar_ops.h" />
+    <ClInclude Include="libs\cml\vector\size_checking.h" />
+    <ClInclude Include="libs\cml\vector\subvector.h" />
+    <ClInclude Include="libs\cml\vector\subvector_node.h" />
+    <ClInclude Include="libs\cml\vector\subvector_ops.h" />
+    <ClInclude Include="libs\cml\vector\temporary.h" />
+    <ClInclude Include="libs\cml\vector\traits.h" />
+    <ClInclude Include="libs\cml\vector\triple_product.h" />
+    <ClInclude Include="libs\cml\vector\types.h" />
+    <ClInclude Include="libs\cml\vector\type_util.h" />
+    <ClInclude Include="libs\cml\vector\unary_node.h" />
+    <ClInclude Include="libs\cml\vector\unary_ops.h" />
+    <ClInclude Include="libs\cml\vector\vector.h" />
+    <ClInclude Include="libs\cml\vector\writable_vector.h" />
+    <ClInclude Include="libs\cml\version.h" />
+    <ClInclude Include="libs\pugixml\foreach.hpp" />
+    <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="libs\pugixml\pugixml.hpp" />
+    <ClInclude Include="Core\Crc32.h" />
+    <ClInclude Include="Core\Incopiable.h" />
+    <ClInclude Include="Core\Singleton.h" />
+    <ClInclude Include="Core\StringID.h" />
+    <ClInclude Include="Serialization\Member.h" />
+    <ClInclude Include="Serialization\MemberHandler.h" />
+    <ClInclude Include="States\IState.h" />
+    <ClInclude Include="States\IStateManager.h" />
+    <ClInclude Include="Utils\FileHelpers.h" />
+    <ClInclude Include="Utils\Random.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Path.cpp" />
+    <ClCompile Include="Core\ServiceManager.cpp" />
+    <ClCompile Include="Core\GameTimer.cpp" />
+    <ClCompile Include="entity\Entity.cpp" />
+    <ClCompile Include="entity\EntityComponent.cpp" />
+    <ClCompile Include="DB\DBManager.cpp" />
+    <ClCompile Include="DB\DBObject.cpp" />
+    <ClCompile Include="DB\DBObjectDescriptor.cpp" />
+    <ClCompile Include="entity\EntityLibrary.cpp" />
+    <ClCompile Include="entity\EntityRegistry.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Gameplay\Level.cpp" />
+    <ClCompile Include="Gameplay\LevelDBObject.cpp" />
+    <ClCompile Include="Gameplay\ResourceContainer.cpp" />
+    <ClCompile Include="Game_PCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="libs\pugixml\pugixml.cpp" />
+    <ClCompile Include="Core\StringID.cpp" />
+    <ClCompile Include="Serialization\Member.cpp" />
+    <ClCompile Include="States\IStateManager.cpp" />
+    <ClCompile Include="Utils\FileHelpers.cpp" />
+    <ClCompile Include="Utils\Random.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

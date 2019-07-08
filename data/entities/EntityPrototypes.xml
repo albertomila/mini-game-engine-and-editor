@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<EntityLibrary>
+	<Entity id="2934150074" name="test4" type="2712113402">
+		<CPhysicsComponent m2="0" />
+		<CGraphicComponent MainTexture="" TexturePivot="0,0" pos="0,0,0" />
+		<CSoundComponent m3="0.000000" />
+	</Entity>
+	<Entity id="2657615338" name="test2_0_1" type="2712113402">
+		<CPhysicsComponent m2="0" />
+		<CGraphicComponent MainTexture="" TexturePivot="0,0" pos="0,0,0" />
+		<CSoundComponent m3="0.000000" />
+	</Entity>
+	<Entity id="287770698" name="test4_0_1" type="2712113402">
+		<CPhysicsComponent m2="0" />
+		<CGraphicComponent MainTexture="" TexturePivot="0,0" pos="0,0,0" />
+		<CSoundComponent m3="0.000000" />
+	</Entity>
+</EntityLibrary>
